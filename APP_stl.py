@@ -104,7 +104,7 @@ if uploaded_file is not None:
     else:
             predicted_labels = 'pneumonia'
     # Display the prediction result
-    st.markdown(f"<h2 style='text-align: center; color: black;'>Predicted Class: {predicted_labels}</h2>", unsafe_allow_html=True)
+    st.markdown(f"<h2 style='text-align: center; color: red;'>Predicted Class: {predicted_labels}</h2>", unsafe_allow_html=True)
     # Button to upload another file
     if st.button("Upload Another File"):
         st.experimental_rerun()  # Reload the app to allow for a new upload
