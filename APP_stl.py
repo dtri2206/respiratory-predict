@@ -108,6 +108,6 @@ if uploaded_file is not None:
     # Button to upload another file
     if st.button("Upload Another File"):
        st.session_state.uploaded_file = None  # Clear the uploaded file
-       st.experimental_rerun()  # Reload the app to allow for a new upload
+       st.experimental_set_query_params()  # Clear query parameters (if any)
 else:
    st.session_state.uploaded_file = uploaded_file  # Store the uploaded file in session state
