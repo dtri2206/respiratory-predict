@@ -92,11 +92,6 @@ if uploaded_file is not None:
     wavelet.append(b)
     mfcc = np.array(mfcc)
     wavelet = np.array(wavelet)
-    # Display audio file information
-    audio_data, sr = lb.load(uploaded_file, sr=None)
-    st.audio(uploaded_file, format='audio/wav')
-    st.write(f"Sample Rate: {sr} Hz")
-    st.write(f"Audio Length: {len(audio_data) / sr:.2f} seconds")
     # Make a prediction
     prediction = model.predict({"mfcc": mfcc, "wavelet": wavelet})  # Adjust based on your model input
     predicted_labels = np.argmax(prediction, axis=1)
