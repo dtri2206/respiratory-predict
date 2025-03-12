@@ -104,7 +104,7 @@ if uploaded_file is not None:
     else:
             predicted_labels = 'pneumonia'
     # Display the prediction result
-    if prediction[0] == 'HEALTHY':
+    if predicted_labels == 'HEALTHY':
         # Display the prediction result in green and add balloons
         st.markdown("<h2 style='text-align: center; color: green;'>Predicted Class: HEALTHY</h2>", unsafe_allow_html=True)
         st.balloons()  # Display balloons
