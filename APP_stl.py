@@ -5,7 +5,7 @@ import keras
 import pywt
 
 # Load your pre-trained model
-model = keras.models.load_model("C:/BMEII/rsweb/my_model.h5")  # Adjust based on your model format
+model = keras.models.load_model("my_model.h5")  # Adjust based on your model format
 
 def wavelet_transform(signal, wavelet='db1', level=5, target_length=259):
     """
