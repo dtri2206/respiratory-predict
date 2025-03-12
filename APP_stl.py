@@ -104,10 +104,10 @@ if uploaded_file is not None:
     else:
             predicted_labels = 'pneumonia'
     # Display the prediction result
-    st.markdown(f"<h2 style='text-align: center; color: red;'>Predicted Class: {predicted_labels}</h2>", unsafe_allow_html=True)
-    # Button to upload another file
-    if st.button("Upload Another File"):
-       st.session_state.uploaded_file = None  # Clear the uploaded file
-       st.experimental_set_query_params()  # Clear query parameters (if any)
-else:
-   st.session_state.uploaded_file = uploaded_file  # Store the uploaded file in session state
+    if prediction[0] == 'HEALTHY':
+        # Display the prediction result in green and add balloons
+        st.markdown("<h2 style='text-align: center; color: green;'>Predicted Class: HEALTHY</h2>", unsafe_allow_html=True)
+        st.balloons()  # Display balloons
+    else:
+        st.markdown(f"<h2 style='text-align: center; color: red;'>Predicted Class: {predicted_labels}</h2>", unsafe_allow_html=True)
+    
